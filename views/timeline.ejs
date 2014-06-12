@@ -13,48 +13,32 @@
 			</header>
 			<div class="main">
 				<ul class="cbp_tmtimeline">
+					<% events.forEach( function ( event ){ %>
+
 					<li>
 						<time class="cbp_tmtime">
-							<span><h3 class="time_dec">2013/9/15</h3></span>
+							<span><h3 class="time_dec"><%= event.date %></h3></span>
 						</time>
 						<div class="cbp_tmicon cbp_tmicon-earth"></div>
 						<div class="cbp_tmlabel">
 							<div class="fs-title">
-								<h2>title</h2>
+								<h2><%= event.title %></h2>
 							</div>
 							<div class="fs-content" id="content1">
 								<div class="container-fluid">
 									<div class="col-sm-5">
-										<img src="img/logo.png" width="100%">		
+										<img src="<%= event.image %>" width="100%">		
 									</div>
 									<div class="col-sm-7">
-										<p>content-content-content-content-content-content-content-content-content-content-content-content-content-content-content-content-content-content-content-content-content-content-content-</p>
+										<p><%= event.content %></p>
 									</div>
 								</div>
 							</div>
 						</div>
 					</li>
-					<li>
-						<time class="cbp_tmtime" datetime="2014/4/16">
-							<span><h3 class="time_dec">2014/6/8</h3></span>
-						</time>
-						<div class="cbp_tmicon cbp_tmicon-earth"></div>
-						<div class="cbp_tmlabel">
-							<div class="fs-title">
-								<h2>title</h2>
-							</div>
-							<div class="fs-content" id="content1">
-								<div class="container-fluid">
-									<div class="col-sm-5">
-										<img src="img/logo.png" width="100%">		
-									</div>
-									<div class="col-sm-7">
-										<p>content-content-content-content-content-content-content-content-content-content-content-content-content-content-content-content-content-content-content-content-content-content-content-</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</li>
+
+					<% }); %>
+					
 				</ul>
 			</div>
 		</div>

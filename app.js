@@ -36,6 +36,7 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/timeline', routes.timeline);
 app.get('/upload', routes.upload);
+app.post('/uploadevent', routes.uploadevent);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

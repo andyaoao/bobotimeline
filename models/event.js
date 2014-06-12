@@ -5,6 +5,7 @@ var Eventschema = new Schema({
 	id: { type: String, required: true, unique: true},
 	pic: { type: String, required: true },
 	date:{ type: String},
+	title:{type: String},
 	content: { type: String},
 	updated_at: { type: Date, default: new Date() }
 });
