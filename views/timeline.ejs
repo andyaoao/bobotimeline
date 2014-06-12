@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include header %>
+		<link rel="stylesheet" type="text/css" href="css/events.css">
+	</head>
+	<img src="img/card.png" width="100%" class="back">
+	<body>
+		<%- include navbar %>
+		<div class="fs-container">
+			<header class="clearfix">
+				<h1><%= title %></h1>
+			</header>
+			<div class="main">
+				<ul class="cbp_tmtimeline">
+					<li>
+						<time class="cbp_tmtime">
+							<span><h3 class="time_dec">2014/6/8</h3></span>
+						</time>
+						<div class="cbp_tmicon cbp_tmicon-earth"></div>
+						<div class="cbp_tmlabel">
+							<div class="fs-title">
+								<h2>title</h2>
+							</div>
+							<div class="fs-content" id="content1">
+								<div class="container-fluid">
+									<div class="col-sm-5">
+										<img src="img/logo.png" width="100%">		
+									</div>
+									<div class="col-sm-7">
+										<p>content-content-content-content-content-content-content-content-content-content-content-content-content-content-content-content-content-content-content-content-content-content-content-</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<time class="cbp_tmtime" datetime="2014/4/16">
+							<span><h3 class="time_dec">2014/6/8</h3></span>
+						</time>
+						<div class="cbp_tmicon cbp_tmicon-earth"></div>
+						<div class="cbp_tmlabel">
+							<div class="fs-title">
+								<h2>title</h2>
+							</div>
+							<div class="fs-content" id="content1">
+								<div class="container-fluid">
+									<div class="col-sm-5">
+										<img src="img/logo.png" width="100%">		
+									</div>
+									<div class="col-sm-7">
+										<p>content-content-content-content-content-content-content-content-content-content-content-content-content-content-content-content-content-content-content-content-content-content-content-</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<%- include footer %>
+		
+		<script type="text/javascript" src="js/timeline.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$('#nav-event').addClass('active');
+			});
+		</script>
+	</body>
+</html>
