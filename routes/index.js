@@ -16,3 +16,9 @@ exports.todolist = function(req, res) {
 		title: 'TodoList'
 	});
 }
+
+exports.upload = function(req, res) {
+	res.render('upload', {
+		title: 'Upload'
+	});
+}

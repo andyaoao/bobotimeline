@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html  lang="en">
+  <head>
+    <% include header.ejs %>
+  </head>
+  <body>
+    <% include navbar.ejs %>
+      <br><br><br>
+      <h1 class="text-center">故事上傳</h1>
+      <form enctype="multipart/form-data" role="form" id="uploadform" name="uploadform" method="POST" action="/uploadevent">
+      <div class="row-fluid">
+          <div>
+                <div class="form-group col-md-4 pull-left">
+                  <label>照片上傳</label>
+                  <br>
+                  <button class="btn buy_btn" id="pickfile" type="button" />請選擇檔案</button>
+                  <img style="max-width:200px;" id="empty">
+                  <input id="imgurl" type="hidden" name="imgurl">
+                </div>
+                <div class="form-group col-md-8">
+                  <label>日期</label>
+                  <input type="text" class="form-control input-md " placeholder="2013/02/14" id="date" name="date">
+                  <label>文章內文</label>
+                  <br>
+                  <textarea type="text" name="description" id="description" class="form-control input-md" rows="4" placeholder="請寫一些咚咚"></textarea>
+                </div>
+          </div> 
+      </div>  
+      <div class="col-md-1 pull-right">
+          <button class="btn btn-primary btn-lg btn-block" id="upload" type="submit">Submit</button>
+      </div>
+      </form>
+
+    <%- include footer %>
+    <script type="text/javascript" src="//api.filepicker.io/v1/filepicker.js"></script>
+    <script type="text/javascript" src="js/upload.js"></script>
+  </body>
+</html>

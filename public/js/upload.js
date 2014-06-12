@@ -1,6 +1,6 @@
 
 $(function() {
-	filepicker.setKey('A9EohQTTekVEh7qY7rVw4z');
+	filepicker.setKey('AF20zBITS3GVg5MA5JPITz');
 	$("#pickfile").click(function chooseFile() {
 		console.log("hi")
 		filepicker.pick(function(InkBlob) {

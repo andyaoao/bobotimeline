@@ -1,8 +1,9 @@
+require('./db');
 
 var express = require('express');
 var http = require('http');
 var path = require('path');
-var passport = require('passport');
+var mongoose = require('mongoose');
 var partials = require('express-partials');
 var routes  = require( './routes' );
 
@@ -34,6 +35,7 @@ if ('development' == app.get('env')) {
 // Routes
 app.get('/', routes.index);
 app.get('/timeline', routes.timeline);
+app.get('/upload', routes.upload);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
