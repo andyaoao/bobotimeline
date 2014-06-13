@@ -47,8 +47,7 @@ exports.uploadevent = function(req, res) {
 	    content	   : req.body.content,
       	updated_at : Date.now()
   	}).save( function ( err, event, count ){
-    	if( err ) return next( err );
-    	console.log('upload supply successfully');
+    	console.log('upload event successfully');
     	var redirect = '<html><meta http-equiv="refresh" content="1;url=/upload" />'
 		var flash = '<h1>成功上傳!</h1></html>';
 		res.end(redirect+flash);
