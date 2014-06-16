@@ -6,6 +6,8 @@ var path = require('path');
 var mongoose = require('mongoose');
 var partials = require('express-partials');
 var routes  = require( './routes' );
+var events  = require( './routes/event' );
+var todo  = require( './routes/todo' );
 
 var app = express();
 
@@ -34,9 +36,16 @@ if ('development' == app.get('env')) {
 
 // Routes
 app.get('/', routes.index);
-app.get('/timeline', routes.timeline);
 app.get('/upload', routes.upload);
-app.post('/uploadevent', routes.uploadevent);
+
+app.get('/timeline', events.timeline);
+app.post('/uploadevent', events.uploadevent);
+
+app.get('/todolist', todo.todolist);
+app.post('/todolist/create', todo.create);
+app.get('/todolist/destroy/:id', todo.destroy);
+// app.get('/todolist/edit/:id', todo.edit);
+// app.get('/todolist/update/:id', todo.update);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

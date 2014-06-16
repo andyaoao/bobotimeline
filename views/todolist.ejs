@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include header %>
+		<link rel="stylesheet" type="text/css" href="css/events.css">
+	</head>
+	<!-- <img src="img/card.png" width="100%" class="back"> -->
+	<body>
+		<%- include navbar %>
+		<div class="fs-container">
+			<header class="clearfix">
+				<h1><%= title %></h1>
+			</header>
+			<div class="main">
+				<ul>
+					<form enctype="multipart/form-data" role="form" action="/todolist/create" method="post">
+    					<div>
+    						<label>User</label>
+      						<input class="input" type="text" name="user" />
+    						<label>Content</label>
+      						<input class="input" type="text" name="content" />
+      						<button class="btn btn-info" type="submit">submit</button>
+      					</div>
+  					</form>
+					<% todos.forEach( function ( todo ){ %>
+					<li>
+						<h2><%= todo.user %></h2>
+						<p><%= todo.content %></p>
+						<a href="todolist/destroy/<%= todo.todo_id %>">刪除</p>
+					</li>
+					<% }); %>
+				</ul>
+			</div>
+		</div>
+
+		<%- include footer %>
+		
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$('#nav-todolist').addClass('active');
+			});
+		</script>
+	</body>
+</html>
