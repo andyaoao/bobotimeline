@@ -15,4 +15,5 @@ mongoose.connection.once('open', function() {
 });
 
 require('./models/event');
+require('./models/todo');
 
