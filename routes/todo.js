@@ -23,6 +23,7 @@ exports.create = function ( req, res ){
       todo_id    : TodoID++, 
       user       : req.body.user,
       content    : req.body.content,
+      date       : req.body.date,
       updated_at : Date.now()
   }).save( function ( err, todo, count ){
 
