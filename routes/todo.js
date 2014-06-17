@@ -24,6 +24,7 @@ exports.create = function ( req, res ){
       user       : req.body.user,
       content    : req.body.content,
       date       : req.body.date,
+      is_done    : 0,
       updated_at : Date.now()
   }).save( function ( err, todo, count ){
 
