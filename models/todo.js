@@ -6,6 +6,7 @@ var Todoschema = new Schema({
     user	   : String,
     content    : String,
     date       : Date,
+    is_done    : Number,
     updated_at : Date
 });
 

@@ -17,6 +17,8 @@
     					<div>
     						<label>User</label>
       						<input class="input" type="text" name="user" />
+      						<label>Date</label>
+      						<input class="input" type="text" name="date" />
     						<label>Content</label>
       						<input class="input" type="text" name="content" />
       						<button class="btn btn-info" type="submit">submit</button>
@@ -26,6 +28,7 @@
 					<li>
 						<h2><%= todo.user %></h2>
 						<p><%= todo.content %></p>
+						<p><%= todo.date %></p>
 						<a href="todolist/destroy/<%= todo.todo_id %>">刪除</p>
 					</li>
 					<% }); %>
