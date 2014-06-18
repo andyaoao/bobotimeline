@@ -29,10 +29,6 @@
 						<h2><%= todo.user %></h2>
 						<p><%= todo.date %></p>
 						<p><%= todo.content %></p>
-						<p><%= todo.date %></p>
-						<% if(todo.is_done==1){ %>
-							<%= <span class="glyphicon glyphicon-ok"></span> %>
-						<% } %>
 						<a href="todolist/destroy/<%= todo.todo_id %>">刪除</p>
 					</li>
 					<% }); %>
