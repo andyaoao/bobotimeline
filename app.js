@@ -4,6 +4,7 @@ var express = require('express');
 var http = require('http');
 var path = require('path');
 var mongoose = require('mongoose');
+var promise  = require( 'promise' );
 var partials = require('express-partials');
 var routes  = require( './routes' );
 var events  = require( './routes/event' );

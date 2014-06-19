@@ -1,0 +1,41 @@
+.back{
+	display: block;
+	opacity:0.3;
+	position: fixed;
+	background-repeat: repeat-x;
+}
+
+.sticker{
+	display: block;
+	background-color: #F1C40F;
+	opacity: 0.9;
+	border-radius: 20px;
+	border-color: black;
+	position: relative;
+	height: 350px;
+}
+
+.submit{
+	background-color: #D35400;
+	color: white;
+}
+
+.done{
+	background-color: #27AE60;
+	color: white;
+}
+
+.delete{
+	background-color: #C0392B;
+	color: white;
+}
+
+.is_done{
+	display: block;
+	background-color: gray;
+	opacity: 0.9;
+	border-radius: 20px;
+	border-color: black;
+	position: relative;
+	height: 350px;	
+}

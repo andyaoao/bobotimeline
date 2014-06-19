@@ -3,6 +3,7 @@
 	<head>
 		<%- include header %>
 		<link rel="stylesheet" type="text/css" href="css/events.css">
+		<link rel="stylesheet" type="text/css" href="css/todo.css">
 	</head>
 	<img src="img/card.png" width="100%" class="back">
 	<body>
@@ -12,27 +13,41 @@
 				<h1><%= title %></h1>
 			</header>
 			<div class="main">
-				<ul>
-					<li class="col-md-3">
+				<ul id="tag">
+					<li  class="col-md-3 sticker">
 						<form enctype="multipart/form-data" role="form" action="/todolist/create" method="post">
-	    					<div>
-	    						<label>User</label>
-	      						<input class="input" type="text" name="user" />
-	    						<label>Date</label>
-	      						<input class="input" type="text" name="date" />
-	    						<label>Content</label>
-	      						<input class="input" type="text" name="content" />
-	      						<button class="btn btn-info" type="submit">submit</button>
-	      					</div>
-	  					</form>
+    						<div>
+    							<br>
+    							<label>User</label><br>
+      							<input class="input" type="text" name="user" placeholder="bo"/><br><br>
+	      						<label>Date</label><br>
+	      						<input class="input" type="text" name="date" placeholder="2014/6/30"/><br><br>
+	    						<label>Content</label><br>
+	      						<textarea type="text" name="content" id="content" class="form-control input-md" rows="2" placeholder="要記得寫信"></textarea><br>
+	      						<button class="btn submit col-md-12" type="submit"><strong>submit</strong></button>
+	      						<br>
+	      						<br>
+      						</div>
+  						</form>
+  					</li>
+					<li  class="col-md-1">
   					</li>
 					<% todos.forEach( function ( todo ){ %>
-					<li class="col-md-3">
-						<h2><%= todo.user %></h2>
-						<p><%= todo.date %></p>
-						<p><%= todo.content %></p>
-						<a href="todolist/destroy/<%= todo.todo_id %>">刪除</p>
-					</li>
+					<div class="place" id="<%= todo.todo_id %>">
+						<li class="col-md-3 sticker">
+							<h2><%= todo.user %>'s work</h2>
+							<p><%= todo.date %></p>
+	   						<div>
+		   						<a href="#" class="btn done col-md-5 pull-left" id="done"><strong>done</strong></a>
+	   							<a href="todolist/destroy/<%= todo.todo_id %>" class="btn delete col-md-5 pull-right"><strong>delete</strong></a>
+	   						</div>
+	   						<br><br>
+	   						<div><%= todo.content %></div>
+							<p></p>
+						</li>
+						<li  class="col-md-1">
+	  					</li>
+  					</div>
 					<% }); %>
 				</ul>
 			</div>
@@ -45,5 +60,6 @@
 				$('#nav-todolist').addClass('active');
 			});
 		</script>
+		<script type="text/javascript" src="js/todo.js"></script>
 	</body>
 </html>

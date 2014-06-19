@@ -1,4 +1,5 @@
 var mongoose = require( 'mongoose' );
+var promise  = require( 'promise' );
 var Todo     = mongoose.model( 'Todo' );
 var TodoID   = 0;
 
@@ -19,6 +20,7 @@ exports.todolist = function ( req, res ){
 };
 
 exports.create = function ( req, res ){
+  
   new Todo({
       todo_id    : TodoID++, 
       user       : req.body.user,
@@ -33,11 +35,32 @@ exports.create = function ( req, res ){
 };
 
 exports.destroy = function ( req, res ){
-  Todo.findById( req.params.id, function ( err, todo ){
+  
+  console.log("in destroy id", req.params.id);
+  
+  Todo.find({
+    todo_id: req.params.id
+  },function (err, todos) {
+    todos[0].remove({});
+  })
 
-    todo.remove({});
-    res.redirect( '/todolist' );
-  });
+  res.redirect( '/todolist' );
+};
+
+exports.update = function( req, res ){
+  
+  console.log("in update id", req.params.id);
+  
+  Todo.find({
+    todo_id: req.params.id
+  },function(err, todos) {
+    updater = todos[0];
+    updater.is_done = 1;
+    updater.save({});
+  })
+
+  res.redirect( '/todolist' );
+
 };
 
 // exports.edit = function( req, res ){
@@ -54,23 +77,4 @@ exports.destroy = function ( req, res ){
 //         current : req.params.id
 //       });
 //     });
-// };
-
-// exports.update = function( req, res, next ){
-//   Todo.findById( req.params.id, function ( err, todo ){
-//     var user_id = req.cookies ?
-//       req.cookies.user_id : undefined;
-
-//     if( todo.user_id !== user_id ){
-//       return utils.forbidden( res );
-//     }
-
-//     todo.content    = req.body.content;
-//     todo.updated_at = Date.now();
-//     todo.save( function ( err, todo, count ){
-//       if( err ) return next( err );
-
-//       res.redirect( '/' );
-//     });
-//   });
 // };
