@@ -4,7 +4,9 @@
 
 	function eventExpand() {
 		$('.fs-title').click(function (e) {
-			$('#content1').slideToggle(1000);
+			var id = $(this).next('.fs-content').attr('id');
+			var DivId = '#' + id;
+			$(DivId).slideToggle(1000);
 		});
 	}
 
