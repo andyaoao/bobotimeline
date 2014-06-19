@@ -13,19 +13,21 @@
 			</header>
 			<div class="main">
 				<ul>
-					<form enctype="multipart/form-data" role="form" action="/todolist/create" method="post">
-    					<div>
-    						<label>User</label>
-      						<input class="input" type="text" name="user" />
-    						<label>Date</label>
-      						<input class="input" type="text" name="date" />
-    						<label>Content</label>
-      						<input class="input" type="text" name="content" />
-      						<button class="btn btn-info" type="submit">submit</button>
-      					</div>
-  					</form>
+					<li class="col-md-3">
+						<form enctype="multipart/form-data" role="form" action="/todolist/create" method="post">
+	    					<div>
+	    						<label>User</label>
+	      						<input class="input" type="text" name="user" />
+	    						<label>Date</label>
+	      						<input class="input" type="text" name="date" />
+	    						<label>Content</label>
+	      						<input class="input" type="text" name="content" />
+	      						<button class="btn btn-info" type="submit">submit</button>
+	      					</div>
+	  					</form>
+  					</li>
 					<% todos.forEach( function ( todo ){ %>
-					<li>
+					<li class="col-md-3">
 						<h2><%= todo.user %></h2>
 						<p><%= todo.date %></p>
 						<p><%= todo.content %></p>
