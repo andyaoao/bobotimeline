@@ -5,9 +5,10 @@ var TodoID   = 0;
 
 exports.todolist = function ( req, res ){
 
+    console.log('show the list');
     Todo.
 		find().
-		sort( {'is_done: -1'}).
+		sort( {is_done: 1}).
 		exec(function(err, todos) {
 			if (err) {
 				console.error(err);
@@ -56,9 +57,10 @@ exports.update = function( req, res ){
   },function(err, todos) {
     updater = todos[0];
     updater.is_done = 1;
+    console.log('updater', updater.todo_id)
     updater.save({});
   })
-
+  
   res.redirect( '/todolist' );
 
 };

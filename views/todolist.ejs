@@ -32,23 +32,27 @@
   					</li>
 					<li  class="col-md-1">
   					</li>
-					<% todos.forEach( function ( todo ){ %>
-					<div class="place" id="<%= todo.todo_id %>">
-						<li class="col-md-3 sticker">
-							<h2><%= todo.user %>'s work</h2>
-							<p><%= todo.date %></p>
-	   						<div>
-		   						<a href="#" class="btn done col-md-5 pull-left" id="done"><strong>done</strong></a>
-	   							<a href="todolist/destroy/<%= todo.todo_id %>" class="btn delete col-md-5 pull-right"><strong>delete</strong></a>
-	   						</div>
-	   						<br><br>
-	   						<div><%= todo.content %></div>
-							<p></p>
-						</li>
-						<li  class="col-md-1">
-	  					</li>
-  					</div>
-					<% }); %>
+						<% todos.forEach( function ( todo ){ %>
+							<div class="place" id="<%= todo.todo_id %>">
+							  <% if(todo.is_done==0){ %>
+								<li class="col-md-3 sticker">
+							  <% }else{ %>
+								<li class="col-md-3 is_done">
+  							  <% } %>
+								<h2><%= todo.user %>'s work</h2>
+								<p><%= todo.date %></p>
+			   					<div>
+				   					<a href="#" class="btn done col-md-5 pull-left"><strong>done</strong></a>
+			   						<a href="todolist/destroy/<%= todo.todo_id %>" class="btn delete col-md-5 pull-right"><strong>delete</strong></a>
+			   						</div>
+			   						<br><br>
+			   						<div><%= todo.content %></div>
+									<p></p>
+								</li>
+								<li  class="col-md-1">
+			  					</li>
+		  					</div>
+						<% }); %>
 				</ul>
 			</div>
 		</div>
