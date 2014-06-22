@@ -45,8 +45,8 @@ app.post('/uploadevent', events.uploadevent);
 app.get('/todolist', todo.todolist);
 app.post('/todolist/create', todo.create);
 app.get('/todolist/destroy/:id', todo.destroy);
+app.get('/todolist/update/:id', todo.update);
 // app.get('/todolist/edit/:id', todo.edit);
-// app.get('/todolist/update/:id', todo.update);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

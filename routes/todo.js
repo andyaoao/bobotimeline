@@ -7,7 +7,7 @@ exports.todolist = function ( req, res ){
 
     Todo.
 		find().
-		sort( '-date' ).
+		sort( {'is_done: -1'}).
 		exec(function(err, todos) {
 			if (err) {
 				console.error(err);
