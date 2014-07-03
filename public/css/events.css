@@ -3,6 +3,7 @@
 body {
 	font-family: "蘋果儷中黑", "Apple LiGothic", "Apple LiGothic Medium", "Microsoft JhengHei", "微軟正黑體", sans-serif;
 	padding-top: 70px;
+	font-size: 15px;
 }
 
 a {
@@ -293,13 +294,6 @@ p {
 	padding: 5px 15px;
 	*/
 	display: none;
-}
-
-.back{
-	display: block;
-	opacity:0.3;
-	position: fixed;
-	background-repeat: repeat-x;
 }
 
 .time_dec{
