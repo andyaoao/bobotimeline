@@ -2,12 +2,14 @@
 <html  lang="en">
   <head>
     <% include header.ejs %>
-    <link rel="stylesheet" type="text/css" href="css/events.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/events.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/upload.css">
   </head>
   <img src="img/card.png" width="100%" class="back">
   <body>
     <% include navbar.ejs %>
       <br><br><br>
+      <div class="border">	
       <h1 class="text-center">故事上傳</h1>
       <form enctype="multipart/form-data" role="form" id="uploadform" name="uploadform" method="POST" action="/uploadevent">
       <div class="row-fluid">
@@ -16,7 +18,7 @@
                 <div class="form-group col-md-3 pull-left">
                   <label>照片上傳</label>
                   <br>
-                  <button class="btn buy_btn" id="pickfile" type="button" />請選擇檔案</button>
+                  <button class="btn" id="pickfile" type="button" />請選擇檔案</button>
                   <img style="max-width:200px;" id="empty">
                   <input id="imgurl" type="hidden" name="imgurl">
                 </div>
@@ -35,6 +37,7 @@
           </div> 
       </div>  
       </form>
+      </div>
 
     <%- include footer %>
     <script type="text/javascript" src="//api.filepicker.io/v1/filepicker.js"></script>

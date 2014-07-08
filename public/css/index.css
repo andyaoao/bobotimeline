@@ -83,7 +83,8 @@ a{
 	line-height: 35px;
 	position: relative;
 	font-weight: 400;
-	color: #936975;
+	/* color: #936975; */
+	color:	#DD4414;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
     padding: 0px 0px 5px 0px;
 }
@@ -189,4 +190,9 @@ p.codrops-demos a.current-demo:hover{
 		top: auto;
 		left: auto;
 	}
+}
+
+.center_img{
+	width: 150px;
+	height: 150px;
 }
