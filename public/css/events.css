@@ -300,3 +300,9 @@ p {
 	color: black;
 	text-decoration: bold;
 }
+
+.img_dec{
+	border-style: groove;
+	border-color: white;
+	border-radius: 10px;
+}
